@@ -64,4 +64,15 @@
   - Applying particular stack : git stash apply stash@{2}
   - Dropping and clearing Stash : git stash drop stash@{2} , Dropping ALL : git stash clear
   
+- Travelling back
+  - git checkout commit  (Known as DETACHED HEAD.. not pointing to any  branch)
+  - brining back to branch commit >> git switch branch-name  OR git switch - 
+  - HEAD~1 refers the commit previous to recent commit
+  - Discarding the changes u made on the file compared to previous commit >> `git checkout HEAD file` OR `git checkout -- file1 file2`
+  - same thing with restore : `git restore file` OR to a particular commit : `git restore --source HEAD~1 file`
+  - Unstaging changes with GIT : `git restore --staged file1` 
+  - undoing commits with reset : `git reset HEAD~1` i,e it will delete the commit only, but the changes will be there...so you can create a new branch and commit..then come back to oringinal branch. So the changes will disappear.
+  - OR in one command to delete the commit and discarding the changes --> `git reset --hard commit`
+  - With Revert : `git revert commit-hash`. the difference between reset and revert is the earlier one deletes the commit while the latter creates a new commit ...
+  
 
