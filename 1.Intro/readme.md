@@ -20,53 +20,56 @@
   - rm file    ,,,  rm -rf folder
   
 - Basic [Adding and Committing]
-  - git init
-  - git status
-  - git add file1 file2
-  - git commit -m "Inline MSG"
-  - git log  OR git log --oneline
+  - initializing git repo on ur local folder] `git init`
+  - command to tell the changed file names and new files - `git status`
+  - Adding files to staging area - `git add file1 file2`
+  - Committing to repo - `git commit -m "Inline MSG"`
+  - checking logs -  `git log`  OR `git log --oneline`
 
 - Commit in detail
   - Atomic commits [Keeping each commit focused on single feature/ bug fix]
   - Imperative Style for git commit comments e.g, make xyz do this rather than made xyz to do this
-  - Changing the editor >> git config --global core.editor "code --wait"
-  - modifying the commit msg typo or amending new files to previous commit ->> git commit --amend
-  - ignore certain files with .gitignore
+  - Changing the editor >> `git config --global core.editor "code --wait"`
+  - modifying the commit msg typo or amending new files to previous commit ->> `git commit --amend`
+  - ignore certain files with `.gitignore`
 
 - Branching
   - viewing all branches `git branch`
-  - creating branch > git branch branch-name 
-  - switching branch > git checkout existing-branch  OR git switch existing branch-name or git switch -c "branch-name"
-  - deleting branch (Change your branch) >> git branch -d name or with Force >> git branch -D name
-  - Rename branch (stay on the branch where u want to rename) >> git branch -m name
+  - creating branch > `git branch branch-name` 
+  - switching branch > `git checkout existing-branc`h  OR `git switch existing branch-nam`e or `git switch -c "branch-name"`
+  - deleting branch (Change your branch) >> `git branch -d name` or with Force >> `git branch -D name`
+  - Rename branch (stay on the branch where u want to rename) >> `git branch -m name`
+  - HEAD points to the current active branch where the active branch points to the latest commit ([link1](https://stackoverflow.blog/2021/04/05/a-look-under-the-hood-how-branches-work-in-git/) and [link2](https://stackoverflow.com/a/2530000/12210002))
+  
 
 - Merging
   -  different types : Recursive, Fast-Forward etc
-  -  git merge branch-name
+  -  `git merge branch-name`
   - [Different Merging Strategy](https://stackoverflow.com/a/366940/12210002) and [Another link](https://www.atlassian.com/git/tutorials/using-branches/merge-strategy)
 
-- Git Diff
+- Git Diff - [link](https://stackoverflow.com/a/1587952/12210002)
   - Comparing the changes between commits,branches, files, staging area and working directory
-  - git diff HEAD [Differences from last commit with respect to working directory, both staged and unstaged]
-  - git diff [Differences between the working directory and staging area... unstaged changes]
-  - git diff --staged [Differences between staging area with commit]
-  - for a Specific file >> git diff filename  ... similarly... git diff --staged filename, git diff HEAD filename
-  - Across branches >> git diff branch1 branch2
-  - Comapring commits >> git diff commit1 commit2
+  - `git diff file` -- shows the changed content between the files in working directory and staging area
+  - `git diff HEAD` [Differences from last commit with respect to working directory, both staged and unstaged]
+  - `git diff` [Differences between the working directory and staging area... unstaged changes]
+  - `git diff` --staged [Differences between staging area with commit]
+  - for a Specific file >> `git diff filename`  ... similarly... `git diff --staged filename`, `git diff HEAD filename`
+  - Across branches >> `git diff branch1 branch2`
+  - Comapring commits >> `git diff commit1 commit2`
 
 - Stashing
   - Stashing the unsaved changes in working + staging area
-  - git stash , a shortcut to git stash save
-  - git stash pop... bringing back the changes deleting from stash
-  - git stash apply... same as pop, but the changes will stay in stash
+  - `git stash` , a shortcut to git stash save
+  - `git stash pop`... bringing back the changes deleting from stash
+  - `git stash apply`... same as pop, but the changes will stay in stash
   - Follows Stack Pattern FIFO
-  - Viewing the contetns : git stash list
-  - Applying particular stack : git stash apply stash@{2}
-  - Dropping and clearing Stash : git stash drop stash@{2} , Dropping ALL : git stash clear
+  - Viewing the contetns : `git stash list`
+  - Applying particular stack : `git stash apply stash@{2}`
+  - Dropping and clearing Stash : `git stash drop stash@{2}` , Dropping ALL : `git stash clear`
   
 - Travelling back
   - git checkout commit  (Known as DETACHED HEAD.. not pointing to any  branch)
-  - brining back to branch commit >> git switch branch-name  OR git switch - 
+  - brining back to branch commit >> git switch branch-name  OR git switch -  OR creating another branch and committing, thn switching back
   - HEAD~1 refers the commit previous to recent commit
   - Discarding the changes u made on the file compared to previous commit >> `git checkout HEAD file` OR `git checkout -- file1 file2`
   - same thing with restore : `git restore file` OR to a particular commit : `git restore --source HEAD~1 file`
@@ -74,5 +77,13 @@
   - undoing commits with reset : `git reset HEAD~1` i,e it will delete the commit only, but the changes will be there...so you can create a new branch and commit..then come back to oringinal branch. So the changes will disappear.
   - OR in one command to delete the commit and discarding the changes --> `git reset --hard commit`
   - With Revert : `git revert commit-hash`. the difference between reset and revert is the earlier one deletes the commit while the latter creates a new commit ...
-  
+
+- Extra notes
+  - understanding mixed, soft, hard of [git reset](https://stackoverflow.com/a/50022436/12210002)
+  - understanding [git revert](https://stackoverflow.com/a/19032493/12210002)
+  - [reset vs revert vs checkout](https://stackoverflow.com/a/8358039/12210002)
+  - [reset vs revert](https://itnext.io/fixing-mistakes-using-git-reset-and-revert-3d68fab3176e)
+  - [git diff](https://stackoverflow.com/a/1587952/12210002)
+  - [HEAD](https://stackoverflow.com/a/2530000/12210002)
+  -   
 
