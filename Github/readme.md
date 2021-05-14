@@ -25,5 +25,9 @@
   - Github Pages
   - Github Gists - for Sharing codes
   - Collaboration >> open source projects
+  - [Git Fork](https://stackoverflow.com/a/6286877/12210002)
+  - [Github Flow Guide](https://guides.github.com/introduction/flow/) and [Guide 2](https://www.atlassian.com/git/tutorials/comparing-workflows) , [Guide 3 Forking](https://guides.github.com/activities/forking/)
+  - [Markdown Notes](https://guides.github.com/features/masterinsg-markdown/)
+  - [Forking and Branching](https://stackoverflow.com/a/3611349/12210002)
   - 
   
